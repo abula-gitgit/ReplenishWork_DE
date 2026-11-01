@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient (Royal Blue to Deep Indigo) -->
+    <linearGradient id="bgGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="45%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#3730a3"/>
+    </linearGradient>
+
+    <!-- Top Highlight Overlay (Glass Reflection) -->
+    <linearGradient id="topGlow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="65%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Status Active Dot Gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <!-- Deep Ambient Shadow -->
+    <filter id="symbolShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Center Badge Shadow -->
+    <filter id="centerShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1e3a8a" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base -->
+  <rect width="512" height="512" rx="116" fill="url(#bgGrad)"/>
+
+  <!-- Top Glass Highlight Overlay -->
+  <rect width="512" height="256" rx="116" fill="url(#topGlow)"/>
+
+  <!-- Inner Border Stroke -->
+  <rect x="2" y="2" width="508" height="508" rx="114" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-opacity="0.25"/>
+
+  <!-- Main Symbol: Dynamic Replacement/Maintenance Cycle Arrow -->
+  <g filter="url(#symbolShadow)">
+    <!-- Circular Cycle Arc -->
+    <path 
+      d="M152 236 A 124 124 0 1 1 176 348" 
+      fill="none" 
+      stroke="#ffffff" 
+      stroke-width="38" 
+      stroke-linecap="round" 
+      stroke-linejoin="round"
+    />
+    <!-- Clockwise Arrow Head -->
+    <polyline 
+      points="152 144 152 238 246 238" 
+      fill="none" 
+      stroke="#ffffff" 
+      stroke-width="38" 
+      stroke-linecap="round" 
+      stroke-linejoin="round"
+    />
+
+    <!-- Center Inspection Badge (Circle with Checkmark) -->
+    <circle cx="280" cy="280" r="64" fill="#ffffff" filter="url(#centerShadow)"/>
+    <!-- Checkmark inside Badge -->
+    <path 
+      d="M250 280 L272 302 L314 256" 
+      fill="none" 
+      stroke="#1d4ed8" 
+      stroke-width="15" 
+      stroke-linecap="round" 
+      stroke-linejoin="round"
+    />
+  </g>
+
+  <!-- Top-Right Active Status Indicator Dot -->
+  <circle cx="396" cy="116" r="22" fill="url(#accentGrad)" stroke="#ffffff" stroke-width="6"/>
+  <circle cx="396" cy="116" r="30" fill="none" stroke="#10b981" stroke-width="2.5" stroke-opacity="0.6"/>
+</svg>
